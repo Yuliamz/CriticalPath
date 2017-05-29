@@ -4,12 +4,7 @@ import controller.GraphController;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
-/**
- *
- * @author Yuliamz
- */
 public class Graph {
 
     private List<Node> nodes;
