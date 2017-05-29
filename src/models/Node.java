@@ -1,10 +1,5 @@
 package models;
 
-/**
- *
- * @author Pedro
- * @param <T>
- */
 public class Node<T> {
 
     private double Ul;
