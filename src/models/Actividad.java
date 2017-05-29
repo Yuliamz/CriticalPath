@@ -1,18 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package models;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.Set;
 
-/**
- *
- * @author Pedro
- */
 public class Actividad {
 
     private String name;
@@ -90,7 +79,6 @@ public class Actividad {
     public double getVarianza() {
         return varianza;
     }
-
     
     public Object[] datos() {
         Object[] info = {name, predecesor.toString().replace("[", "").replace("]", "").replace(",", " "), TiempoOptimista, TiempoProbable, TiempoPesimista, TiempoEsperado, varianza};
