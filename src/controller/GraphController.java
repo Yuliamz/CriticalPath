@@ -8,16 +8,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import models.Actividad;
-import models.Node;
 import models.Puente;
 import org.jgrapht.DirectedGraph;
-import org.jgrapht.Graph;
 import org.jgrapht.GraphPath;
 import org.jgrapht.alg.shortestpath.AllDirectedPaths;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
-import org.jgrapht.graph.DefaultWeightedEdge;
-
 /**
  *
  * @author Yuliamz
@@ -59,9 +55,9 @@ public class GraphController {
     
     private void addEdges(List<Puente> puentes){
         for (Puente puente : puentes) {
-//            if (!dg.containsEdge(puente.getFrom().getName(), puente.getTo().getName())) {
+            if (!dg.containsEdge(puente.getFrom().getName(), puente.getTo().getName())) {
                 dg.addEdge(puente.getFrom().getName(), puente.getTo().getName());
-//            }
+            }
         }
     }
     
@@ -97,65 +93,64 @@ public class GraphController {
     
     
     
-    public static void main(String[] args) {
-        
-        DirectedGraph<String, DefaultEdge> dg = new DefaultDirectedGraph<>(DefaultEdge.class);
-        dg.addVertex("A");
-        dg.addVertex("B");
-        dg.addVertex("C");
-        dg.addVertex("D");
-        dg.addVertex("E");
-        dg.addVertex("F");
-        dg.addVertex("G");
-        dg.addVertex("H");
-        dg.addVertex("I");
-        dg.addVertex("J");
-        dg.addEdge("A", "D");
-        dg.addEdge("B", "E");
-        dg.addEdge("C", "F");
-        dg.addEdge("C", "G");
-        dg.addEdge("D", "H");
-        dg.addEdge("E", "I");
-        dg.addEdge("F", "I");
-        dg.addEdge("G", "I");
-        dg.addEdge("H", "J");
-        dg.addEdge("I", "J");
-        
-        AllDirectedPaths adp = new AllDirectedPaths(dg);
-        List<GraphPath> list = new LinkedList<>();
-        System.out.println("CAMINOS DESDE A HASTA J");
-        list = adp.getAllPaths("A", "J", true, Integer.MAX_VALUE);
-        for (GraphPath graphPath : list) {
-            System.out.println(Arrays.toString(graphPath.getEdgeList().toArray()));
-        }
-        System.out.println("CAMINOS DESDE B HASTA J");
-        list = adp.getAllPaths("B", "J", true, Integer.MAX_VALUE);
-        for (GraphPath graphPath : list) {
-            System.out.println(Arrays.toString(graphPath.getEdgeList().toArray()));
-        }
-        System.out.println("CAMINOS DESDE C HASTA J");
-        list = adp.getAllPaths("C", "J", true, Integer.MAX_VALUE);
-        for (GraphPath graphPath : list) {
-            System.out.println(Arrays.toString(graphPath.getEdgeList().toArray()));
-            System.out.println(Arrays.toString(graphPath.getEdgeList().toArray())
-                                .replace("[", "")
-                                .replace("]", "")
-                                .replaceAll(" +", "")
-                                .replaceAll("[:,()]", "")
-                                .replaceAll("(.)\\1", "$1")
-                                );
-        }
-        Set s = new HashSet();
-        Set d = new HashSet();
-        s.add("A");
-        s.add("B");
-        s.add("C");
-        d.add("J");
-        
-        list = adp.getAllPaths(s, d, true, Integer.MAX_VALUE);
-        for (GraphPath graphPath : list) {
-            System.out.println(Arrays.toString(graphPath.getEdgeList().toArray()));
-        }
-        
-    }
+//    public static void main(String[] args) {
+//        
+//        DirectedGraph<String, DefaultEdge> dg = new DefaultDirectedGraph<>(DefaultEdge.class);
+//        dg.addVertex("A");
+//        dg.addVertex("B");
+//        dg.addVertex("C");
+//        dg.addVertex("D");
+//        dg.addVertex("E");
+//        dg.addVertex("F");
+//        dg.addVertex("G");
+//        dg.addVertex("H");
+//        dg.addVertex("I");
+//        dg.addVertex("J");
+//        dg.addEdge("A", "D");
+//        dg.addEdge("B", "E");
+//        dg.addEdge("C", "F");
+//        dg.addEdge("C", "G");
+//        dg.addEdge("D", "H");
+//        dg.addEdge("E", "I");
+//        dg.addEdge("F", "I");
+//        dg.addEdge("G", "I");
+//        dg.addEdge("H", "J");
+//        dg.addEdge("I", "J");
+//        
+//        AllDirectedPaths adp = new AllDirectedPaths(dg);
+//        List<GraphPath> list = new LinkedList<>();
+//        System.out.println("CAMINOS DESDE A HASTA J");
+//        list = adp.getAllPaths("A", "J", true, Integer.MAX_VALUE);
+//        for (GraphPath graphPath : list) {
+//            System.out.println(Arrays.toString(graphPath.getEdgeList().toArray()));
+//        }
+//        System.out.println("CAMINOS DESDE B HASTA J");
+//        list = adp.getAllPaths("B", "J", true, Integer.MAX_VALUE);
+//        for (GraphPath graphPath : list) {
+//            System.out.println(Arrays.toString(graphPath.getEdgeList().toArray()));
+//        }
+//        System.out.println("CAMINOS DESDE C HASTA J");
+//        list = adp.getAllPaths("C", "J", true, Integer.MAX_VALUE);
+//        for (GraphPath graphPath : list) {
+//            System.out.println(Arrays.toString(graphPath.getEdgeList().toArray()));
+//            System.out.println(Arrays.toString(graphPath.getEdgeList().toArray())
+//                                .replace("[", "")
+//                                .replace("]", "")
+//                                .replaceAll(" +", "")
+//                                .replaceAll("[:,()]", "")
+//                                .replaceAll("(.)\\1", "$1")
+//                                );
+//        }
+//        Set s = new HashSet();
+//        Set d = new HashSet();
+//        s.add("A");
+//        s.add("B");
+//        s.add("C");
+//        d.add("J");
+//        
+//        list = adp.getAllPaths(s, d, true, Integer.MAX_VALUE);
+//        for (GraphPath graphPath : list) {
+//            System.out.println(Arrays.toString(graphPath.getEdgeList().toArray()));
+//        }
+//    }
 }
