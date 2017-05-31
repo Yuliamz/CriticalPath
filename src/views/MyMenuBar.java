@@ -16,12 +16,20 @@ public class MyMenuBar extends JMenuBar {
     public MyMenuBar(Controller controller) {
 
         JMenu menuArchivo = new JMenu("File");
-        JMenuItem itemAddProducto = new JMenuItem("Agregar Actividad");
-        itemAddProducto.addActionListener(controller);
-        itemAddProducto.setActionCommand(Actions.SHOW_DIALOG.name());
-        itemAddProducto.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
-        menuArchivo.add(itemAddProducto);
+        JMenuItem itemAddActividad = new JMenuItem("Agregar Actividad");
+        itemAddActividad.addActionListener(controller);
+        itemAddActividad.setActionCommand(Actions.SHOW_DIALOG.name());
+        itemAddActividad.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.CTRL_MASK));
+        menuArchivo.add(itemAddActividad);
+        
+        JMenuItem itemCalculateCPM = new JMenuItem("Calcular Ruta Critica");
+        itemCalculateCPM.addActionListener(controller);
+        itemCalculateCPM.setActionCommand(Actions.CALCULATE_CRITICAL_PATH.name());
+        itemCalculateCPM.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_B, ActionEvent.CTRL_MASK));
+        menuArchivo.add(itemCalculateCPM);
+        
         add(menuArchivo);
+        
         
     }
 }
