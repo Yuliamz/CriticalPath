@@ -3,12 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Yuliamz/Documents/NetBeansProjects/CPM/src/models/Node.java</file>
-            <file>file:/C:/Users/Yuliamz/Documents/NetBeansProjects/CPM/src/controller/GraphController.java</file>
-            <file>file:/C:/Users/Yuliamz/Documents/NetBeansProjects/CPM/src/models/CPM.java</file>
-            <file>file:/C:/Users/Yuliamz/Documents/NetBeansProjects/CPM/src/test/testCPM.java</file>
-            <file>file:/C:/Users/Yuliamz/Documents/NetBeansProjects/CPM/src/models/Graph.java</file>
-            <file>file:/C:/Users/Yuliamz/Documents/NetBeansProjects/CPM/src/models/Actividad.java</file>
+            <file>file:/C:/Users/Yuliamz/Documents/NetBeansProjects/CriticalPath/src/test/testCPM.java</file>
+            <file>file:/C:/Users/Yuliamz/Documents/NetBeansProjects/CriticalPath/src/controller/GraphController.java</file>
         </group>
     </open-files>
 </project-private>
