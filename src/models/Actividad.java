@@ -81,7 +81,7 @@ public class Actividad {
     }
     
     public Object[] datos() {
-        Object[] info = {name, predecesor.toString().replace("[", "").replace("]", "").replace(",", " "), TiempoOptimista, TiempoProbable, TiempoPesimista, TiempoEsperado, varianza};
+        Object[] info = {name, predecesor==null?"":predecesor.toString().replace("[", "").replace("]", "").replace(",", " "), TiempoOptimista, TiempoProbable, TiempoPesimista, TiempoEsperado, varianza};
         return info;
     }
 

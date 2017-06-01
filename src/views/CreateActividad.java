@@ -130,7 +130,7 @@ public Actividad createactividad(){
     for (int i = 0; i < aux.length(); i++) {
           info.add(aux.charAt(i));
     }
-    return ManejadorActividades.createActividad(jTextFieldName.getText().toUpperCase(), info, (int)jSpinnerOptimista.getValue(), (int)jSpinnerProbable.getValue(), (int)jSpinnerPesimista.getValue());
+    return ManejadorActividades.createActividad(jTextFieldName.getText().toUpperCase(), info.size()==0?null:info, (int)jSpinnerOptimista.getValue(), (int)jSpinnerProbable.getValue(), (int)jSpinnerPesimista.getValue());
 }
 
 }

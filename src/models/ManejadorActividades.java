@@ -10,7 +10,7 @@ import java.util.Set;
 public class ManejadorActividades {
     
    private  ArrayList<Actividad> listActividad;
-
+   
     public ManejadorActividades() {
         listActividad = new ArrayList<>();
     }
@@ -31,5 +31,9 @@ public class ManejadorActividades {
        }
        return null;
    }
-      
+
+    public ArrayList<Actividad> getListActividad() {
+        return listActividad;
+    }
+   
 }
