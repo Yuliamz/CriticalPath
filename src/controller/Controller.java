@@ -47,7 +47,7 @@ public class Controller implements ActionListener {
         manejadorActividades.addActividad(actividad);
         mainWindow.addInfo(actividad.datos());
         mainWindow.paintGraph(actividad.getName());
-        if (!actividad.getPredecesor().isEmpty()) {
+        if (actividad.getPredecesor()!=null) {
             char aux[] = actividad.getPredecesor().toString().replace("[", "").replace("]", "").replace(",", " ").toCharArray();
             System.out.println("======================= " + aux + "=================== " + aux);
             for (int i = 0; i < aux.length; i++) {
