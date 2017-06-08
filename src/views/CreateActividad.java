@@ -9,6 +9,7 @@ import controller.Actions;
 import controller.Controller;
 import java.util.HashSet;
 import java.util.Set;
+import javax.swing.ImageIcon;
 import models.Actividad;
 import models.ManejadorActividades;
 
@@ -25,6 +26,7 @@ public class CreateActividad extends javax.swing.JDialog {
         initComponents();
         jButton1.addActionListener(controller);
         jButton1.setActionCommand(Actions.CREATE.name());
+        setIconImage(new ImageIcon(getClass().getResource("/imgs/icon.png")).getImage());
     }
 
     /**
@@ -95,18 +97,17 @@ public class CreateActividad extends javax.swing.JDialog {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>                        
 
- 
     // Variables declaration - do not modify                     
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -123,14 +124,13 @@ public class CreateActividad extends javax.swing.JDialog {
     private javax.swing.JTextField jTextFieldPredecesor;
     // End of variables declaration                   
 
-
-public Actividad createactividad(){
-    Set<Character> info = new HashSet<Character>();
-    String aux = jTextFieldPredecesor.getText().replaceAll(" +", "").toUpperCase();
-    for (int i = 0; i < aux.length(); i++) {
-          info.add(aux.charAt(i));
+    public Actividad createactividad() {
+        Set<Character> info = new HashSet<Character>();
+        String aux = jTextFieldPredecesor.getText().replaceAll(" +", "").toUpperCase();
+        for (int i = 0; i < aux.length(); i++) {
+            info.add(aux.charAt(i));
+        }
+        return ManejadorActividades.createActividad(jTextFieldName.getText().toUpperCase(), info.isEmpty() ? null : info, (int) jSpinnerOptimista.getValue(), (int) jSpinnerProbable.getValue(), (int) jSpinnerPesimista.getValue());
     }
-    return ManejadorActividades.createActividad(jTextFieldName.getText().toUpperCase(), info.isEmpty()?null:info, (int)jSpinnerOptimista.getValue(), (int)jSpinnerProbable.getValue(), (int)jSpinnerPesimista.getValue());
-}
 
 }

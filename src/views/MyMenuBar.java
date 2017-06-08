@@ -15,7 +15,7 @@ public class MyMenuBar extends JMenuBar {
 
     public MyMenuBar(Controller controller) {
 
-        JMenu menuArchivo = new JMenu("File");
+        JMenu menuArchivo = new JMenu("Archivo");
         JMenuItem itemAddActividad = new JMenuItem("Agregar Actividad");
         itemAddActividad.addActionListener(controller);
         itemAddActividad.setActionCommand(Actions.SHOW_DIALOG.name());
@@ -30,6 +30,13 @@ public class MyMenuBar extends JMenuBar {
         
         add(menuArchivo);
         
+        JMenu menuHelp = new JMenu("Acerca de..");
+        JMenuItem jMenuItem = new JMenuItem("Ayuda...");
+        jMenuItem .addActionListener(controller);
+        jMenuItem .setActionCommand(Actions.HELP.name());
+        jMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H, ActionEvent.CTRL_MASK));
+        menuHelp.add(jMenuItem);
+        add(menuHelp);
         
     }
 }

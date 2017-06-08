@@ -12,6 +12,7 @@ public class Actividad {
     private int TiempoEsperado;
     private Double varianza;
     private double desviacionStandar;
+    private boolean isCPM;
     
     public Actividad(String name, Set<Character> predecesor, int TiempoOptimista, int TiempoProbable, int TiempoPesimista) {
         this.name = name;
@@ -22,6 +23,7 @@ public class Actividad {
         this.TiempoEsperado = (TiempoOptimista + 4 * (TiempoProbable) + TiempoPesimista)/6;
         varianza = Math.pow(((double)(this.TiempoPesimista-this.TiempoOptimista)/6),2);
         desviacionStandar += varianza;
+        this.isCPM = false;
     }
     
     public String getName() {
@@ -85,4 +87,11 @@ public class Actividad {
         return info;
     }
 
+    public void setIsCPM(boolean isCPM) {
+        this.isCPM = isCPM;
+    }
+
+    public boolean isIsCPM() {
+        return isCPM;
+    }
 }
