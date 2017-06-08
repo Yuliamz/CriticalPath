@@ -31,7 +31,7 @@ public class Actividad {
     }
 
     public double getDesviacionStandar() {
-        return Math.pow((double)desviacionStandar, 0.5);
+        return Math.sqrt(desviacionStandar);
     }
     
     public Set<Character> getPredecesor() {
